@@ -4,9 +4,10 @@ An executive function assistant that prints a daily focus receipt on a thermal p
 ---
 
 ## First Run
-
+_the output_
 ![First Run](Media/first_run.jpeg)
 
+_the demo_
 ![First Run](Media/first_run.gif)
 
 ---
