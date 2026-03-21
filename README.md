@@ -1,12 +1,19 @@
 # POS: Personal Output System
-
 An executive function assistant that prints a daily focus receipt on a thermal printer. Each receipt combines the current datetime, a randomly selected quote, and your pending to-do tasks for the day.
+
+---
+
+## First Run
+
+![First Run](Media/first_run.jpeg)
+
+[![First Run](Media/first_run.gif)](Media/first_run.mp4)
+
 ---
 
 ## How to Use
 
 **1. Add your tasks to `tasks_bank.txt`** — one task per line:
-
 ```
 Make bed
 Brush teeth
@@ -16,7 +23,6 @@ Reply to emails
 ```
 
 **2. Run the program:**
-
 ```bash
 python main.py
 ```
@@ -24,7 +30,6 @@ python main.py
 This prints the full receipt: datetime, a random quote, and all pending tasks.
 
 **3. Mark tasks complete** — when you finish a task, open `tasks_bank.txt` and add `[x]` in front of it:
-
 ```
 [x] Make bed
 [x] Brush teeth
@@ -39,7 +44,6 @@ Drink coffee        ← still pending
 ## Managing Quotes
 
 Quotes are stored in `quotes_bank.py` as a dictionary organised by author.
-
 ```python
 "Author Name": [
     "First quote here.",
