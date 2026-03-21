@@ -9,7 +9,7 @@ QUOTES = {
     ],
 
     "Barack Obama": [
-        "Better is good. That's the history of progress in this country — not perfect, better.",
+        "Better is good. That's the history of progress in this country-not perfect, better.",
     ],
 
     "Steve Jobs": [
@@ -52,7 +52,7 @@ QUOTES = {
     "Susan Cain": [
         "There's zero correlation between being the best talker and having the best ideas.",
 
-        "Introversion — along with its cousins sensitivity, seriousness, and shyness — is now "
+        "Introversion-along with its cousins sensitivity, seriousness, and shyness-is now "
         "a second-class personality trait, somewhere between a disappointment and a pathology. "
         "Introverts living in the Extrovert Ideal are like women in a man's world, discounted "
         "because of a trait that goes to the core of who they are.",  

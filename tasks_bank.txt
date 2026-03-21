@@ -1,0 +1,5 @@
+Make bed
+[x] Put on clothes
+Brush teeth
+Eat breakfast
+Drink coffee
