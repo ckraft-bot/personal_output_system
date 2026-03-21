@@ -1,5 +1,5 @@
 """
-print_quote.py
+print_single_quote.py
 --------------
 Prints a formatted quote on the Kraft POS-80C printer
 using raw ESC/POS commands over USB (Windows raw printer port).
@@ -8,7 +8,7 @@ Requirements:
     pip install pywin32
 
 Usage:
-    python print_quote.py
+    print_single_quote.py
 
 Notes:
     - The printer must be installed and visible in Windows as a printer.
@@ -25,13 +25,15 @@ import win32print
 
 PRINTER_NAME = "Kraft POS-80C"
 
-QUOTE = (
-    "Time is free, but it's priceless. "
-    "You can't own it, but you can use it. "
-    "You can't keep it, but you can spend it. "
-    "Once you've lost it you can never get it back."
-)
-ATTRIBUTION = "-- Harvey MacKay"
+# QUOTE = (
+#     "Time is free, but it's priceless. "
+#     "You can't own it, but you can use it. "
+#     "You can't keep it, but you can spend it. "
+#     "Once you've lost it you can never get it back."
+# )
+
+QUOTE = ("今天很残酷，明天更残酷, 后天很美好，但绝大多数人都死在明天晚上，看不见后天的太阳.")
+ATTRIBUTION = "-- Jack Ma"
 
 # 57mm paper at 203 dpi => ~48mm printable => ~30 chars per line at default font
 CHARS_PER_LINE = 30
@@ -62,6 +64,11 @@ def check_printers_available():
     for p in win32print.EnumPrinters(2):
         print(f"  - {p[2]}")
     print()
+
+
+def is_printable(text: str) -> bool:
+    """Return True if the text contains only ASCII characters."""
+    return text.isascii()
 
 
 def build_receipt() -> bytes:
@@ -130,6 +137,13 @@ def print_via_win32(printer_name: str, data: bytes):
 
 def main():
     check_printers_available()
+
+    # ASCII check before printing
+    if not is_printable(QUOTE):
+        print("⚠ Quote contains non-ASCII characters and cannot be printed on this printer.")
+        print(f"  Quote: {QUOTE}")
+        print("  Update QUOTE in this file to an ASCII-compatible quote.")
+        return
 
     print(f"Building receipt for: {PRINTER_NAME}")
     receipt_bytes = build_receipt()

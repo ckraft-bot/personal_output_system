@@ -30,10 +30,14 @@ CHARS_PER_LINE = 30
 
 
 def get_random_quote() -> tuple[str, str]:
-    """Pick a random author and one of their quotes. Returns (quote, author)."""
-    author = random.choice(list(qb.QUOTES.keys()))
-    quote  = random.choice(qb.QUOTES[author])
-    return quote, author
+    """Pick a random author and one of their quotes.
+    Skips any quotes containing non-ASCII characters (e.g. Chinese).
+    Returns (quote, author)."""
+    while True:
+        author = random.choice(list(qb.QUOTES.keys()))
+        quote  = random.choice(qb.QUOTES[author])
+        if quote.isascii():
+            return quote, author
 
 
 # ── ESC/POS Helper Bytes ───────────────────────────────────────────────────────
