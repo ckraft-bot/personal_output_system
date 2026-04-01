@@ -1,1 +1,2 @@
 pywin32==306
+python-telegram-bot==22.7
