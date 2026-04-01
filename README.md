@@ -14,31 +14,60 @@ _the demo_
 
 ## How to Use
 
-**1. Add your tasks to `tasks_bank.txt`** — one task per line:
-```
-Make bed
-Brush teeth
-Eat breakfast
-Drink coffee
-Reply to emails
-```
-
-**2. Run the program:**
+**1. Start Xi Guan 习惯** — run the Telegram bot in a terminal:
 ```bash
-python main.py
+python bot.py
 ```
 
-This prints the full receipt: datetime, a random quote, and all pending tasks.
-
-**3. Mark tasks complete** — when you finish a task, open `tasks_bank.txt` and add `[x]` in front of it:
+**2. Add your tasks** — message your bot on Telegram:
 ```
-[x] Make bed
-[x] Brush teeth
-Eat breakfast       ← still pending
-Drink coffee        ← still pending
+/add Make bed
+/add Brush teeth
+/add Eat breakfast
+/add Drink coffee
+/add Reply to emails
 ```
 
-**4. Reprint anytime** — run `main.py` again and only the remaining tasks will print.
+**3. Mark tasks complete** — when you finish a task, tell the bot:
+```
+/complete Make bed
+/complete Brush teeth
+```
+
+**4. Check what's left** — see your pending tasks anytime:
+```
+/list
+```
+
+**5. Print your receipt** — trigger the printer from Telegram:
+```
+/print
+```
+
+Only pending tasks will appear on the receipt.
+
+---
+
+## Bot Setup
+
+Xi Guan 习惯 is a Telegram bot that manages your `tasks_bank.txt` without you ever needing to open the file.
+
+**1. Create your bot via BotFather on Telegram and copy your token.**
+
+**2. Create a `.env` file in the project root:**
+```
+TELEGRAM_BOT_TOKEN=your_token_here
+```
+
+**3. Install dependencies:**
+```bash
+pip install python-telegram-bot python-dotenv
+```
+
+**4. Run the bot:**
+```bash
+python bot.py
+```
 
 ---
 
