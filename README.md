@@ -12,7 +12,7 @@ An executive function assistant that prints a daily focus receipt on a thermal p
 
 ![First Run](Media/first_run.gif)
 
-- _the demo (integating with telegram)_ [watch the walkthorugh here](url)
+- _the demo (integating with telegram)_ [watch the walkthorugh here](https://youtu.be/HqYRTd6m334?si=__qfN-KE2ELJ53mr)
 
 ---
 
